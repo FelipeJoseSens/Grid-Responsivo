@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Produtos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,17 +13,22 @@
 <body>
     <header class="main-header">
         <div class="header-content">
-                        <span class="logo">
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="10" y="10" width="40" height="50" rx="6" fill="#F7E9B0" stroke="#E0C36E" stroke-width="2"/>
-                                <rect x="16" y="18" width="28" height="4" rx="2" fill="#E0C36E"/>
-                                <rect x="16" y="26" width="20" height="4" rx="2" fill="#E0C36E"/>
-                                <rect x="16" y="34" width="24" height="4" rx="2" fill="#E0C36E"/>
-                                <polygon points="30,8 34,18 26,18" fill="#F4A259" stroke="#E07A5F" stroke-width="1"/>
-                                <rect x="28" y="4" width="4" height="8" rx="2" fill="#E07A5F"/>
-                            </svg>
-                        </span>
-            <nav class="main-nav">
+            <span class="logo">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="10" width="40" height="50" rx="6" fill="#F7E9B0" stroke="#E0C36E" stroke-width="2"/>
+                    <rect x="16" y="18" width="28" height="4" rx="2" fill="#E0C36E"/>
+                    <rect x="16" y="26" width="20" height="4" rx="2" fill="#E0C36E"/>
+                    <rect x="16" y="34" width="24" height="4" rx="2" fill="#E0C36E"/>
+                    <polygon points="30,8 34,18 26,18" fill="#F4A259" stroke="#E07A5F" stroke-width="1"/>
+                    <rect x="28" y="4" width="4" height="8" rx="2" fill="#E07A5F"/>
+                </svg>
+            </span>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="#">Catálogo</a></li>
                     <li><a href="#">Sobre</a></li>
@@ -125,6 +131,18 @@
                 }
             });
         }
+        // Menu hambúrguer
+        function toggleMenu() {
+            var nav = document.getElementById('mainNav');
+            nav.classList.toggle('open');
+            document.getElementById('hamburgerBtn').classList.toggle('active');
+        }
+        window.addEventListener('resize', function() {
+            if(window.innerWidth > 800) {
+                document.getElementById('mainNav').classList.remove('open');
+                document.getElementById('hamburgerBtn').classList.remove('active');
+            }
+        });
         </script>
     </footer>
 </body>
