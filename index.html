@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+                        <span class="logo">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="10" width="40" height="50" rx="6" fill="#F7E9B0" stroke="#E0C36E" stroke-width="2"/>
+                                <rect x="16" y="18" width="28" height="4" rx="2" fill="#E0C36E"/>
+                                <rect x="16" y="26" width="20" height="4" rx="2" fill="#E0C36E"/>
+                                <rect x="16" y="34" width="24" height="4" rx="2" fill="#E0C36E"/>
+                                <polygon points="30,8 34,18 26,18" fill="#F4A259" stroke="#E07A5F" stroke-width="1"/>
+                                <rect x="28" y="4" width="4" height="8" rx="2" fill="#E07A5F"/>
+                            </svg>
+                        </span>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Catálogo</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner">
+        <span>BANNER</span>
+    </div>
+
+    <main class="container">
+        <section class="search-bar" style="margin-bottom: 1.5rem;">
+            <input type="text" id="searchInput" placeholder="Pesquisar produtos..." onkeyup="searchProducts()" style="width:100%;max-width:350px;padding:10px 14px;border-radius:6px;border:1px solid #ccc;font-size:1rem;">
+        </section>
+
+        <section class="product-grid">
+            <div class="product-card">
+                <img src="img/estojo.png" alt="Estojo de papelaria">
+                <div class="product-info">
+                    <h3 class="product-title">Estojo</h3>
+                    <p class="product-desc">Espaçoso, elegante<br>e detalhado</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img/mochila.png" alt="Mochila escolar">
+                <div class="product-info">
+                    <h3 class="product-title">Mochila</h3>
+                    <p class="product-desc">Possui vários slots de armazenamento<br>Compacta e resistente</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img/carderno.png" alt="Caderno universitário">
+                <div class="product-info">
+                    <h3 class="product-title">Caderno Universitário</h3>
+                    <p class="product-desc">Capa dura, 200 folhas<br>Ideal para anotações</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img/caneta.png" alt="Caneta esferográfica">
+                <div class="product-info">
+                    <h3 class="product-title">Caneta Esferográfica</h3>
+                    <p class="product-desc">Tinta azul, escrita suave<br>Corpo transparente</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img/lapis_preto.png" alt="Lápis preto HB nº2">
+                <div class="product-info">
+                    <h3 class="product-title">Lápis Preto</h3>
+                    <p class="product-desc">HB nº2, fácil de apontar<br>Ideal para desenhos e escrita</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img/borracha.png" alt="Borracha branca escolar">
+                <div class="product-info">
+                    <h3 class="product-title">Borracha Branca</h3>
+                    <p class="product-desc">Apaga sem borrar<br>Maciez e precisão</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img/marca_Texto.png" alt="Marca-texto colorido">
+                <div class="product-info">
+                    <h3 class="product-title">Marca-texto</h3>
+                    <p class="product-desc">Cores vibrantes<br>Ponta chanfrada</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img/bloco_de_notas.png" alt="Bloco de notas autoadesivo">
+                <div class="product-info">
+                    <h3 class="product-title">Bloco de Notas</h3>
+                    <p class="product-desc">Folhas autoadesivas<br>Perfeito para recados</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div>
+                <strong>Papelaria do Geraldo</strong><br>
+                Rua dos Sonhadores, 166<br>
+                Paraiso do Eden - ED<br>
+            </div>
+            <div class="footer-contact">(47) 654-834</div>
+        </div>
+        <script>
+        function searchProducts() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toLowerCase();
+            var cards = document.querySelectorAll('.product-card');
+            cards.forEach(function(card) {
+                var title = card.querySelector('.product-title').textContent.toLowerCase();
+                var desc = card.querySelector('.product-desc').textContent.toLowerCase();
+                if (title.includes(filter) || desc.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        </script>
+    </footer>
+</body>
+</html>
