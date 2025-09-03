@@ -1,4 +1,4 @@
-/* Estilos Gerais e Variáveis */
+
 :root {
     --primary-color: #007bff;
     --secondary-color: #f8f9fa;
@@ -121,7 +121,7 @@
 }
 
 
-/* Menu de Navegação */
+
 .main-nav ul {
     list-style: none;
     padding: 0;
@@ -145,7 +145,7 @@
     text-decoration: underline;
 }
 
-/* Grid de Produtos */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--product-card-width), 1fr));
@@ -186,7 +186,7 @@
     margin: 0;
 }
 
-/* Footer */
+
 .main-footer {
     background: var(--footer-bg);
     color: var(--footer-text);
@@ -244,7 +244,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Cabeçalho */
+
 .main-header {
     background-color: white;
     padding: var(--header-padding);
@@ -253,7 +253,7 @@ body {
     margin-bottom: 0;
 }
 
-/* Menu de Navegação */
+
 .main-nav ul {
     list-style: none;
     padding: 0;
@@ -281,7 +281,7 @@ body {
     text-decoration: underline;
 }
 
-/* Grade de Produtos */
+
 .product-grid {
     display: flex;
     flex-wrap: wrap;
@@ -290,7 +290,7 @@ body {
     justify-content: flex-start;
 }
 
-/* Card de Produto */
+
 .product-card {
     background-color: white;
     border-radius: 10px;
@@ -333,7 +333,7 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--primary-color);
-    margin-top: auto; /* Empurra o preço para baixo */
+    margin-top: auto; 
 }
 
 .buy-button {
@@ -350,19 +350,15 @@ body {
     font-size: 1.1rem;
     letter-spacing: 1px;
 }
-/* Filtros */
-/* .filters removido pois não está mais em uso */
+
 
 .buy-button:hover {
     background-color: #0056b3;
 }
 
-/* --- RESPONSIVIDADE --- */
-
-/* Para Tablets (ex: telas com até 768px de largura) */
 @media (max-width: 768px) {
     .product-grid {
-        /* Ajusta o tamanho mínimo do card para telas menores */
+        
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
@@ -371,20 +367,20 @@ body {
     }
 }
 
-/* Para Celulares (ex: telas com até 480px de largura) */
+
 @media (max-width: 480px) {
     .product-grid {
-        /* Em telas muito pequenas, mostra um card por linha */
+       
         grid-template-columns: 1fr;
     }
 
     .main-header {
         padding: 1rem;
     }
-    /* Removidas variáveis e propriedades inválidas */
+   
 }
 
-/* Hamburger menu */
+
 .hamburger {
     display: none;
     flex-direction: column;
